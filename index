@@ -1,4 +1,4 @@
-## TOP-5 FAILING GATEWAYS (critical monitoring) ## 
+# TOP-5 FAILING GATEWAYS (critical monitoring) 
 SELECT 
   gateway,
   COUNT(*) as fail_count,
@@ -11,7 +11,7 @@ GROUP BY gateway
 ORDER BY fail_count DESC 
 LIMIT 5;
 
-## CHANNEL SUCCESS RATE (%) ## 
+# CHANNEL SUCCESS RATE (%)  
 SELECT 
   channel,
   COUNT(*) as total_tx,
@@ -23,8 +23,7 @@ GROUP BY channel
 HAVING total_tx > 100
 ORDER BY success_rate_pct ASC;
 
-## 503 TIMEOUT ANALYSIS (real incident case)
-Used to resolve 35% payment failure for merchant ##
+# 503 TIMEOUT ANALYSIS (real incident case)
 
 SELECT 
   DATE(created_at) as incident_date,
